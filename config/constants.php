@@ -11,7 +11,4 @@ define("ENTITIES", MODELS . '/entities');
 // define('CSS', BASE_URL . '/public/assets/css');
 
 // define('JS', BASE_URL . '/public/assets/js');
-
 ?>
-
-

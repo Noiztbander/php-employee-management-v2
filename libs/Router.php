@@ -1,8 +1,13 @@
 <?php
+require_once(CONTROLLERS . '/LoginController.php');
 
-class Router {
+class Router
+{
 
-    function __construct() {
+    function __construct()
+    {
+        session_start();
+
         echo '<p>Router loaded</p>';
 
         // Get the URL as position [0] controller and position [1] for methods
@@ -10,6 +15,13 @@ class Router {
         $url = rtrim($url, '/');
         $url = explode('/', $url);
 
-        var_dump($url);
+        // Check if session exists
+        if (isset($_SESSION["loggedUsername"])) {
+        } else {
+            $login = new LoginController();
+            $login->render();
+        }
     }
 }
+
+?>
