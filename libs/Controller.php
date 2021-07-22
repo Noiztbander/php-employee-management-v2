@@ -5,7 +5,7 @@ class Controller
 
     function __construct()
     {
-        echo "<p>Base controller class</p>";
+        // echo "<p>Base controller class loaded</p>";
         $this->view = new View();
     }
 
@@ -22,5 +22,4 @@ class Controller
         }
     }
 }
-
 ?>

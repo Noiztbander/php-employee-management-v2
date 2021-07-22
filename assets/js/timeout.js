@@ -12,7 +12,7 @@ setInterval(function () {
         closeSessionAjax();
       } else {
         console.log("NOT logging out");
-        console.log(resp);
+        // console.log(resp);
       }
     },
   });

@@ -9,18 +9,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="node_modules/jquery/dist/jquery.min.js"></script>
-    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
-    <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="./assets/css/login.css">
-    <script src="./assets/js/index.js"></script>
+    <script src="<?php echo JQUERY; ?>/jquery.min.js"></script>
+    <link rel="stylesheet" href="<?php echo CSS_BOOTSTRAP; ?>/bootstrap.min.css">
+    <script src="<?php echo CSS_BOOTSTRAP_JS; ?>/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="<?php echo CSS; ?>/login.css">
+    <script src="<?php echo JS; ?>/index.js"></script>
     <title>Document</title>
 </head>
 
 <body class="text-center d-flex flex-column justify-content-center align-items-center bg-light">
     <main class="form-signin container-fluid mb-4">
-        <form method="post" action="./controllers/LoginController.php">
-            <img class="mb-4" src="./images/user.svg" alt="user icon" width="70" height="70">
+        <form method="POST" action="<?php echo BASE_URL ?>login/holamundo">
+            <img class="mb-4" src="<?php echo IMAGES; ?>/user.svg" alt="user icon" width="70" height="70">
             <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
             <!-- Username -->
             <div class="mb-3">

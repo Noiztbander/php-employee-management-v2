@@ -1,14 +1,14 @@
 <?php
 
-class UsersModel extends Model
+class LoginModel extends Model
 {
     public function __construct()
     {
         //This calls to the constructor of the class Model is extending
         parent::__construct();
 
-        if (EXECUTION_FLOW)
-            echo '<p>Content model</p>';
+        // if (EXECUTION_FLOW)
+            echo '<p>Login  model loaded </p>';
     }
 
     public function getUsersFromDb($userInput,$userPassword)
@@ -37,10 +37,7 @@ class UsersModel extends Model
         //     echo $e;
         // }
     }
-    
 }
-
+// $userPassword = SELECT password FROM users WHERE name='admin';
 ?>
 
-
-$userPassword = SELECT password FROM users WHERE name='admin';
