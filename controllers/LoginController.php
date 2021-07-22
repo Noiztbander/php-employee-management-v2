@@ -8,25 +8,41 @@ class LoginController extends Controller
         echo "<p>Login controller class</p>";
     }
 
-    // function validateLoginData($launchUser, $launchPassword, $logedUser, $logedPassword)
-    // {
-    //     switch (true) {
-    //         case ($launchUser == $logedUser && password_verify($launchPassword, $logedPassword)):
-    //             return "Logged";
-    //             break;
-    //         case (($launchUser != $logedUser) && !password_verify($launchPassword, $logedPassword)):
-    //             return "Wrong name and password";
-    //             break;
-    //         case (!($launchUser == $logedUser)):
-    //             return "Wrong name";
-    //             break;
-    //         case (!password_verify($launchPassword, $logedPassword)):
-    //             return "Wrong password";
-    //             break;
-    //         default:
-    //             break;
-    //     }
-    // }
+   
+    // $userJson = file_get_contents("../../resources/users.json");
+    // $users = json_decode($userJson, true);
+    // $loggedUserName = $users["users"][0]["name"];
+    // $loggedUserPassword = $users["users"][0]["password"];
+    // $recivedUserName = $_POST["user"];
+    // $recivedUserPassword = $_POST["password"];
+
+    // $login = validateLoginData(
+    // $recivedUserName,
+    // $recivedUserPassword,
+    // $loggedUserName,
+    // $loggedUserPassword
+    // );  
+    
+    function validateLoginData($launchUser, $launchPassword, $logedUser, $logedPassword)
+    {
+        switch (true) {
+            case ($launchUser == $logedUser && password_verify($launchPassword, $logedPassword)):
+                return "Logged";
+                break;
+            case (($launchUser != $logedUser) && !password_verify($launchPassword, $logedPassword)):
+                return "Wrong name and password";
+                break;
+            case (!($launchUser == $logedUser)):
+                return "Wrong name";
+                break;
+            case (!password_verify($launchPassword, $logedPassword)):
+                return "Wrong password";
+                break;
+            default:
+                break;
+        }
+    }
+    
 
     // function startSession()
     // {
@@ -48,6 +64,8 @@ class LoginController extends Controller
     {
         $this->view->render('login/index');
     }
+
+    
 }
 
 ?>

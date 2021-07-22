@@ -19,7 +19,7 @@
 
 <body class="text-center d-flex flex-column justify-content-center align-items-center bg-light">
     <main class="form-signin container-fluid mb-4">
-        <form method="post" action="./src/library/loginController.php">
+        <form method="post" action="./controllers/LoginController.php">
             <img class="mb-4" src="./images/user.svg" alt="user icon" width="70" height="70">
             <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
             <!-- Username -->

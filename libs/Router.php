@@ -14,7 +14,7 @@ class Router
         $url = isset($_GET['url']) ? $_GET['url'] : null;
         $url = rtrim($url, '/');
         $url = explode('/', $url);
-
+        
         // Check if session exists
         if (isset($_SESSION["loggedUsername"])) {
         } else {
