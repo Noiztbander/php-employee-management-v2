@@ -6,7 +6,7 @@ class DashboardController extends Controller
     function __construct()
     {
         parent::__construct();
-        echo "<p>Dashboard Class loaded</p>";
+        // echo "<p>Dashboard Class loaded</p>";
     }
 
     function defaultMethod()
@@ -15,7 +15,7 @@ class DashboardController extends Controller
     }
 
     function defaultFunction() {
-        echo "hola, estamos bien?";
+        // echo "hola, estamos bien?";
         $this->view->render('dashboard/index');
     }
 

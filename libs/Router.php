@@ -21,6 +21,7 @@ class Router
             $controller = new LoginController();
             $controller->loadModel('login');
             $controller->render();
+            //$controller->defaultMethod();
             return false;
         }
 

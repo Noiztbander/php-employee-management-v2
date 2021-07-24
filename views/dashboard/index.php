@@ -1,7 +1,7 @@
 <?php
-// if (!isset($_SESSION["loggedUsername"])) {
-//     header("Location:../index.php?accessDenied=true");
-// }
+if (!isset($_SESSION["loggedUsername"])) {
+    header("Location:../index.php?accessDenied=true");
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -24,9 +24,11 @@
 </head>
 
 <body>
+    <?php require_once("./assets/html/header.php"); ?>
     <main class="container-fluid">
         <div id="jsGrid"></div>
     </main>
+    <?php require_once("./assets/html/footer.html"); ?>
     <script src="<?php echo JS; ?>/dashboard.js"></script>
 </body>
 

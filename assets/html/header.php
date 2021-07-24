@@ -19,9 +19,11 @@ justify-content-between
       </ul>
     </div>
     <!-- Logout functionality -->
-    <div class="d-flex align-items-center">
+    <div class="d-flex align-items-center justify-content-end h-100">
       <p class="m-0 text-info"><?php echo $_SESSION["loggedUsername"]; ?></p>
-      <a class="btn btn-outline-info ml-3" href="./library/sessionHelper.php?login=false">Logout</a>
+      <div class="d-flex align-items-center justify-content-center h-100 ml-3">
+        <a class="btn btn-outline-info " href="./library/sessionHelper.php?login=false">Logout</a>
+      </div>
     </div>
   </nav>
 
@@ -42,4 +44,4 @@ justify-content-between
 
 </header>
 
-<script src="../assets/js/headerLink.js"></script>
+<script src="./assets/js/headerLink.js"></script>

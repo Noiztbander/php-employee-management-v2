@@ -6,6 +6,7 @@ define("VIEWS", BASE_PATH . '/views');
 define("MODELS", BASE_PATH . '/models');
 define("ENTITIES", MODELS . '/entities');
 
+define('HTML', BASE_URL . '/assets/html');
 define('CSS', BASE_URL . '/assets/css');
 define('CSS_BOOTSTRAP', BASE_URL . '/node_modules/bootstrap/dist/css/');
 define('CSS_BOOTSTRAP_JS', BASE_URL . '/node_modules/bootstrap/dist/js/');

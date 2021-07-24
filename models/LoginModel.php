@@ -1,43 +1,40 @@
 <?php
 
+include_once ENTITIES . '/Content.php';
+
 class LoginModel extends Model
 {
     public function __construct()
     {
-        //This calls to the constructor of the class Model is extending
         parent::__construct();
 
-        // if (EXECUTION_FLOW)
             echo '<p>Login  model loaded </p>';
     }
 
-    public function getUsersFromDb($userInput,$userPassword)
+    public function getReceivedUserFromDb($userInput,$userPassword)
     {
 
-        echo "<p>get users from db</p>";
-        echo $userInput . $userPassword;
+        $items = [];
 
-        // $items = [];
+        try {
+            $query = $this->db->connect()->query("SELECT * FROM users WHERE name='$userInput'");
+            while ($row = $query->fetch()) {
+                $item = new Content();
 
-        // try {
-        //     $query = $this->db->connect()->query("SELECT * FROM contents;");
-        //     while ($row = $query->fetch()) {
-        //         $item = new Content();
+                $item->id = $row['userId'];
+                $item->name = $row['name'];
+                $item->email = $row['email'];
+                $item->password = $row['password'];
+                $item->isAdmin = $row['isAdmin'];
 
-        //         $item->id = $row['id'];
-        //         $item->name = $row['name'];
-        //         $item->email = $row['email'];
-        //         $item->text = $row['text'];
-
-        //         array_push($items, $item);
-        //     }
-
-        //     return $items;
-        // } catch (PDOException $e) {
-        //     echo $e;
-        // }
+                array_push($items, $item);
+            }
+            return $items;
+        } catch (PDOException $e) {
+            echo $e;
+        }
     }
 }
-// $userPassword = SELECT password FROM users WHERE name='admin';
+
 ?>
 

@@ -7,8 +7,7 @@ class DashboardModel extends Model
         //This calls to the constructor of the class Model is extending
         parent::__construct();
 
-        // if (EXECUTION_FLOW)
-            echo '<p>Dashboard model loaded</p>';
+        // echo '<p>Dashboard model loaded</p>';
     }
 
 }

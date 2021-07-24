@@ -77,8 +77,6 @@ $("#jsGrid").jsGrid({
         },
         param:/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/
     }]
-  
-
 },
 {
     title: "Age",
@@ -100,28 +98,24 @@ $("#jsGrid").jsGrid({
     name: "streetAddress",
     type: "number",
     width: 20,
-    
 },
 {
     title: "City",
     name: "city",
     type: "text",
     width: 35,
-   
 },
 {
     title: "State",
     name: "state",
     type: "text",
     width: 20,
-
 },
 {
     title: "Postal code",
     name: "postalCode",
     type: "number",
     width: 30,
-
 },
 {
     title: "Phone",
@@ -136,7 +130,6 @@ $("#jsGrid").jsGrid({
             return "The phone number have nine caracters and start by 6";
         },
         param:[600000000,699999999]
-        
     }]
 },
 {
