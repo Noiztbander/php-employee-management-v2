@@ -8,7 +8,6 @@ class LoginModel extends Model
     {
         parent::__construct();
 
-            echo '<p>Login  model loaded </p>';
     }
 
     public function getReceivedUserFromDb($userInput,$userPassword)

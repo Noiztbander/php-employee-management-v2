@@ -1,13 +1,15 @@
 <?php
 require_once(CONTROLLERS . '/FailureController.php');
 require_once(CONTROLLERS . '/LoginController.php');
+require_once(CONTROLLERS . '/DashboardController.php');
+require_once(CONTROLLERS . '/EmployeeController.php');
 
 class Router
 {
 
     function __construct()
     {
-        session_start();
+        // session_start();
 
         // echo '<p>Router loaded</p>';
 

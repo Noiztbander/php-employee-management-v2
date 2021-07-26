@@ -1,5 +1,7 @@
 <?php
 
+include_once ENTITIES . '/Content.php';
+
 class DashboardModel extends Model
 {
     public function __construct()

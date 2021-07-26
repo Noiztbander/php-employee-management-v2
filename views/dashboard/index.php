@@ -1,7 +1,7 @@
 <?php
-if (!isset($_SESSION["loggedUsername"])) {
-    header("Location:../index.php?accessDenied=true");
-}
+// if (!isset($_SESSION["loggedUsername"])) {
+//     header("Location:../index.php?accessDenied=true");
+// }
 ?>
 <!DOCTYPE html>
 <html lang="en">

@@ -1,28 +1,33 @@
 <!-- TODO Employee view -->
 <?php
-//session_start();
+
+session_start();
 
 // Blocking access
-if (!isset($_SESSION["loggedUsername"])) {
-    header("Location:../index.php?accessDenied=true");
-}
+// if (!isset($_SESSION["loggedUsername"])) {
+//     header("Location:../index.php?accessDenied=true");
+// }
 
 // Form content (from row click)
 if (isset($_SESSION["employeeToUpdate"])) {
+    // require_once(CONTROLLERS.'/EmployeeController.php');
+    //session_start();
     // Update employee
     $formMethod = "PUT";
+		$urlToSend = BASE_URL . "employee/otrfuncion";
+
 
     // Get all employee data
-    $name = $_SESSION["employeeToUpdate"]["name"];
-    $lastName = $_SESSION["employeeToUpdate"]["lastName"];
-    $email = $_SESSION["employeeToUpdate"]["email"];
-    $gender = $_SESSION["employeeToUpdate"]["gender"];
-    $city = $_SESSION["employeeToUpdate"]["city"];
-    $streetAddress = $_SESSION["employeeToUpdate"]["streetAddress"];
-    $state = $_SESSION["employeeToUpdate"]["state"];
-    $age = $_SESSION["employeeToUpdate"]["age"];
-    $postalCode = $_SESSION["employeeToUpdate"]["postalCode"];
-    $phoneNumber = $_SESSION["employeeToUpdate"]["phoneNumber"];
+    $name = $_SESSION["employeeToUpdate"]->name;
+    $lastName = $_SESSION["employeeToUpdate"]->lastName;
+    $email = $_SESSION["employeeToUpdate"]->email;
+    $gender = $_SESSION["employeeToUpdate"]->gender;
+    $city = $_SESSION["employeeToUpdate"]->city;
+    $streetAddress = $_SESSION["employeeToUpdate"]->streetAddress;
+    $state = $_SESSION["employeeToUpdate"]->state;
+    $age = $_SESSION["employeeToUpdate"]->age;
+    $postalCode = $_SESSION["employeeToUpdate"]->postalCode;
+    $phoneNumber = $_SESSION["employeeToUpdate"]->phoneNumber;
 
     // Setting up select echo string
     $options = "";
@@ -45,6 +50,7 @@ else {
 
     // Add new employee
     $formMethod = "POST";
+		$urlToSend = BASE_URL . "employee/createNewEmployee";
 
     // Set empty form to new employee
     $name = "";
@@ -92,28 +98,28 @@ else {
 </head>
 
 <body>
-    <?php require("../assets/html/header.php") ?>
+    <?php require("./assets/html/header.php") ?>
     <main class="container-fluid d-flex flex-column justify-content-center">
         <h2>Employee form</h2>
-        <form id="employeeForm" method="<?php echo $formMethod; ?>" action="./library/employeeController.php" class="w-50">
+        <form id="employeeForm" method="<?php echo $formMethod; ?>" action="<?php echo $urlToSend; ?>" class="w-50">
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="newName">Name</label>
-                    <input type="text" class="form-control" id="newName" value="<?php echo $name; ?>" placeholder="Your name">
+                    <input type="text" name="newName" class="form-control" id="newName" value="<?php echo $name; ?>" placeholder="Your name">
                 </div>
                 <div class="form-group col-md-6">
                     <label for="newLastName">Last Name</label>
-                    <input type="text" class="form-control" id="newLastName" value="<?php echo $lastName; ?>" placeholder="Your last name">
+                    <input type="text" name="newLastName" class="form-control" id="newLastName" value="<?php echo $lastName; ?>" placeholder="Your last name">
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="newEmail">Email</label>
-                    <input type="email" class="form-control" id="newEmail" value="<?php echo $email; ?>" placeholder="Email">
+                    <input type="email" name="newEmail" class="form-control" id="newEmail" value="<?php echo $email; ?>" placeholder="Email">
                 </div>
                 <div class="form-group col-md-6">
                     <label for="genderSelect">Gender</label>
-                    <select class="form-control" id="genderSelect">
+                    <select class="form-control" name="genderSelect" id="genderSelect">
                         <?php echo $options; ?>
                     </select>
                 </div>
@@ -121,31 +127,31 @@ else {
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="newCity">City</label>
-                    <input type="text" class="form-control" value="<?php echo $city;  ?>" id="newCity" placeholder="Residency city">
+                    <input type="text" name="newCity" class="form-control" value="<?php echo $city;  ?>" id="newCity" placeholder="Residency city">
                 </div>
                 <div class="form-group col-md-6">
                     <label for="newStreetAdress">Street Address</label>
-                    <input type="number" class="form-control" value="<?php echo $streetAddress; ?>" id="newStreetAdress" placeholder="Number">
+                    <input type="text" name="newStreetAdress" class="form-control" value="<?php echo $streetAddress; ?>" id="newStreetAdress" placeholder="newStreetAdress">
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="newState">State</label>
-                    <input type="text" class="form-control" value="<?php echo $state; ?>" id="newState" placeholder="Residency state">
+                    <input type="text" name="newState" class="form-control" value="<?php echo $state; ?>" id="newState" placeholder="Residency state">
                 </div>
                 <div class="form-group col-md-6">
                     <label for="newAge">Age</label>
-                    <input type="number" class="form-control" value="<?php echo $age; ?>" id="newAge" placeholder="Your age">
+                    <input type="number" name="newAge" class="form-control" value="<?php echo $age; ?>" id="newAge" placeholder="Your age">
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="newPostalCode">Postal Code</label>
-                    <input type="number" class="form-control" value="<?php echo $postalCode; ?>" id="newPostalCode" placeholder="Your postal code">
+                    <input type="number" name="newPostalCode" class="form-control" value="<?php echo $postalCode; ?>" id="newPostalCode" placeholder="Your postal code">
                 </div>
                 <div class="form-group col-md-6">
                     <label for="newPhone">Phone</label>
-                    <input type="number" class="form-control" value="<?php echo $phoneNumber; ?>" id="newPhone" placeholder="Your phone number">
+                    <input type="number" name="newPhone" class="form-control" value="<?php echo $phoneNumber; ?>" id="newPhone" placeholder="Your phone number">
                 </div>
             </div>
             <button id="submitButton" type="submit" class="form-button btn btn-primary">Submit</button>
@@ -153,9 +159,9 @@ else {
         </form>
 
     </main>
-    <?php require("../assets/html/footer.html") ?>
+    <?php require("./assets/html/footer.html") ?>
 
-    <script src="../assets/js/employee.js"></script>
+    <!-- <script src="./assets/js/employee.js"></script> -->
 </body>
 
 </html>

@@ -1,3 +1,6 @@
+<?php
+  session_start();
+?>
 <header class="p-0 container-fluid d-flex flex-column align-items-center">
   <nav class="
 navbar navbar-expand-lg navbar-light
@@ -11,10 +14,10 @@ justify-content-between
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li id="dashboardLink" class="nav-item ">
-          <a class="nav-link" href="./dashboard.php">Dashboard</a>
+          <a class="nav-link" href="<?php echo BASE_URL . 'dashboard/'; ?>">Dashboard</a>
         </li>
         <li id="employeeLink" class="nav-item ">
-          <a class="nav-link" href="./employee.php">Employee</a>
+          <a class="nav-link" href="<?php echo BASE_URL . 'employee/'; ?>">Employee</a>
         </li>
       </ul>
     </div>

@@ -1,6 +1,6 @@
 <?php
 
-include_once ENTITIES . '/Content.php';
+// include_once ENTITIES . '/Content.php';
 
 class DashboardController extends Controller
 {
@@ -9,6 +9,8 @@ class DashboardController extends Controller
     {
         parent::__construct();
         // echo "<p>Dashboard Class loaded</p>";
+
+        // session_start();
     }
 
     function defaultMethod()
