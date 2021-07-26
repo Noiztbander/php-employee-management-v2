@@ -50,7 +50,7 @@ class LoginController extends Controller
             $loggedUserPassword
             );
 
-        // echo $login;
+        echo $login;
 
         $this->checkViewToexecute($login, $loggedUserName);
 
@@ -80,8 +80,9 @@ class LoginController extends Controller
         switch ($login) {
             case "Logged":
                 $_SESSION["loggedUsername"] = $loggedUserName;
-                $this->view->render('dashboard/index');
+                // $this->view->render('dashboard/index');
                 // header("Location:./sessionHelper.php?login=true");
+                header("Location: ../dashboard/loadViewDashboard");
                 break;
             case "Wrong name and password":
                 $_SESSION["wrongEmailPass"] = "Wrong email and password";

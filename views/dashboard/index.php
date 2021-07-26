@@ -25,6 +25,9 @@ if (!isset($_SESSION["loggedUsername"])) {
 
 <body>
     <?php require_once("./assets/html/header.php"); ?>
+    <script>
+        const BASE_URL = "<?php echo BASE_URL ?>";
+    </script>
     <main class="container-fluid">
         <div id="jsGrid"></div>
     </main>

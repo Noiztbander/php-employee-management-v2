@@ -4,6 +4,7 @@ $("#jsGrid").jsGrid({
   width: "100%",
 
   autoload: true,
+  // pageLoading:true,
   inserting: true,
   sorting: true,
   paging: true,
@@ -19,7 +20,8 @@ $("#jsGrid").jsGrid({
   controller: {
     loadData: function (filter) {
       return $.ajax({
-        url: "./library/employeeController.php",
+        // url: "http://localhost/php-employee-management-v2/dashboard/getAllemployees",
+        url: BASE_URL + "dashboard/getAllemployees",
         type: "GET",
         data: filter,
         success: function (resp) {

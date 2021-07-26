@@ -44,4 +44,4 @@ justify-content-between
 
 </header>
 
-<script src="./assets/js/headerLink.js"></script>
+<!-- <script src="./assets/js/headerLink.js"></script> -->
